@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Solutions — Ceedek Digital{% endblock %}
+{% block meta_description %}Ceedek Digital designs technology solutions around real business problems — automation, portals, dashboards, and AI-assisted workflows.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Solutions</span>
+    <h1>We start with your problem, not our technology</h1>
+    <p>These are common situations businesses come to us with. If yours doesn't fit neatly into one, that's fine — most projects don't.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="card-grid">
+      <div class="card">
+        <h3>"Our team spends too much time on repetitive tasks"</h3>
+        <p>We identify where manual work is duplicated across your tools and build automation that removes it — without disrupting how your team already works.</p>
+      </div>
+      <div class="card">
+        <h3>"Our clients need a way to check on their own projects"</h3>
+        <p>We build customer-facing portals so clients can log in, see progress, and communicate — without emailing you for updates.</p>
+      </div>
+      <div class="card">
+        <h3>"We're running the business out of spreadsheets"</h3>
+        <p>We design internal systems that replace fragile spreadsheet processes with something structured, reliable, and easier to hand off to new staff.</p>
+      </div>
+      <div class="card">
+        <h3>"We have data but no way to see the full picture"</h3>
+        <p>We build dashboards that pull your data into one place, so you can actually answer questions about performance in real time.</p>
+      </div>
+      <div class="card">
+        <h3>"We want to use AI but don't know where it actually helps"</h3>
+        <p>We identify one or two specific workflows where AI genuinely saves time, and build it in — rather than adding AI for its own sake.</p>
+      </div>
+      <div class="card">
+        <h3>"We need a custom platform, not another off-the-shelf tool"</h3>
+        <p>When existing software doesn't fit your business model, we design and build a platform shaped around how you actually operate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark cta-band">
+  <div class="container">
+    <h2>Recognise your situation above?</h2>
+    <p>Tell us more about it and we'll figure out the right approach together.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+      <a href="{% url 'website:contact' %}" class="btn btn--outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

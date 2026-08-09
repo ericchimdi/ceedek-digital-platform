@@ -1,0 +1,79 @@
+/* ===== Hero ===== */
+.hero {
+  padding: 6rem 0 5rem;
+}
+
+.hero__inner {
+  max-width: 720px;
+}
+
+.hero__inner p {
+  font-size: 1.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== Process ===== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.process-step__number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.process-step h4 {
+  margin-bottom: 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.9375rem;
+}
+
+/* ===== Project cards ===== */
+.project-card__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background-color: rgba(79, 70, 229, 0.08);
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+/* ===== CTA band ===== */
+.cta-band {
+  text-align: center;
+}
+
+.cta-band h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-band p {
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.cta-band .btn-group {
+  justify-content: center;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

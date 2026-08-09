@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Projects — Ceedek Digital{% endblock %}
+{% block meta_description %}A showcase of Ceedek Digital's concept and internal projects, demonstrating our approach to web development, automation, and custom software.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Projects</span>
+    <h1>A look at how we approach real problems</h1>
+    <p>As a growing studio, our showcase currently includes concept projects and our own internal platform. Real client projects will be added here as they're completed and approved for public display.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="card-grid">
+      <div class="card">
+        <span class="project-card__tag">Concept Project</span>
+        <h4>Client Booking Portal</h4>
+        <p><strong>Business problem:</strong> Service businesses lose time on back-and-forth scheduling.</p>
+        <p><strong>Solution:</strong> A self-service booking system with automated confirmations and reminders.</p>
+        <p><strong>Technologies:</strong> Django, PostgreSQL, JavaScript</p>
+      </div>
+      <div class="card">
+        <span class="project-card__tag">Concept Project</span>
+        <h4>Sales Data Dashboard</h4>
+        <p><strong>Business problem:</strong> Sales data was spread across disconnected spreadsheet exports.</p>
+        <p><strong>Solution:</strong> A centralised, filterable dashboard summarising performance in one view.</p>
+        <p><strong>Technologies:</strong> Django, Chart.js, PostgreSQL</p>
+      </div>
+      <div class="card">
+        <span class="project-card__tag">Internal Project</span>
+        <h4>Ceedek Digital Platform</h4>
+        <p><strong>Business problem:</strong> Ceedek Digital needed a public site, client portal, and admin system in one platform.</p>
+        <p><strong>Solution:</strong> This platform itself — built with Django, custom authentication, and a structured admin system.</p>
+        <p><strong>Technologies:</strong> Django, PostgreSQL, HTML/CSS/JS</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark cta-band">
+  <div class="container">
+    <h2>Want to be one of our first client projects?</h2>
+    <p>We're actively taking on new projects — tell us what you're building.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

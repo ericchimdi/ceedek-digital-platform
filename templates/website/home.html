@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Ceedek Digital — Technology Partner for Growing Businesses{% endblock %}
+{% block meta_description %}Ceedek Digital builds websites, automates business processes, and develops custom software and AI solutions for small businesses, startups and growing companies worldwide.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Ceedek Digital</span>
+    <h1>Technology that fits how your business actually works.</h1>
+    <p>We design websites, automate repetitive work, and build custom software for small businesses and startups that don't have an in-house engineering team — without the overhead of a large agency.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+      <a href="{% url 'website:services' %}" class="btn btn--outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">What We Do</span>
+      <h2>Five ways we help your business run better</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__icon">W</div>
+        <h3>Web Development</h3>
+        <p>Fast, responsive websites and web applications built to represent your business properly online.</p>
+        <a href="{% url 'website:services' %}" class="card__link">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card__icon">A</div>
+        <h3>Business Automation</h3>
+        <p>We connect your tools and automate repetitive tasks, so your team spends less time on manual work.</p>
+        <a href="{% url 'website:services' %}" class="card__link">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card__icon">D</div>
+        <h3>Data Analytics</h3>
+        <p>Turn scattered spreadsheets and systems into dashboards that actually help you make decisions.</p>
+        <a href="{% url 'website:services' %}" class="card__link">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card__icon">S</div>
+        <h3>Custom Software</h3>
+        <p>When off-the-shelf tools don't fit, we build internal systems designed around your exact workflow.</p>
+        <a href="{% url 'website:services' %}" class="card__link">Learn more →</a>
+      </div>
+
+      <div class="card">
+        <div class="card__icon">AI</div>
+        <h3>AI Solutions</h3>
+        <p>Practical AI features — from support automation to document processing — added where they save real time.</p>
+        <a href="{% url 'website:services' %}" class="card__link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Ceedek Digital -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Why Ceedek Digital</span>
+      <h2>Built for businesses that need results, not jargon</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Solutions built around you</h4>
+        <p>We don't start with a template. Every project starts with understanding your actual workflow and constraints.</p>
+      </div>
+      <div class="card">
+        <h4>Clear communication</h4>
+        <p>You'll always know what's being built, why, and when to expect it — no unexplained technical delays.</p>
+      </div>
+      <div class="card">
+        <h4>Systems that can grow</h4>
+        <p>We build with your next stage of growth in mind, so you're not rebuilding from scratch in a year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header section-header--center" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">How We Work</span>
+      <h2>A straightforward process, from first call to launch</h2>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step__number">01</div>
+        <h4>Discover</h4>
+        <p>We learn about your business, your goals, and the problem you're trying to solve.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">02</div>
+        <h4>Plan</h4>
+        <p>We map out the solution, timeline, and cost before any development begins.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">03</div>
+        <h4>Build</h4>
+        <p>We develop your solution in stages, with regular updates along the way.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">04</div>
+        <h4>Test</h4>
+        <p>We check functionality, performance, and usability before anything goes live.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step__number">05</div>
+        <h4>Launch</h4>
+        <p>We deploy your solution and stay available for support as it goes live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Work</span>
+      <h2>A look at the kind of work we do</h2>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="project-card__tag">Concept Project</span>
+        <h4>Client Booking Portal</h4>
+        <p>A concept for a service business booking system with automated scheduling and reminders.</p>
+      </div>
+      <div class="card">
+        <span class="project-card__tag">Concept Project</span>
+        <h4>Sales Data Dashboard</h4>
+        <p>A concept dashboard turning raw sales exports into a clear, filterable reporting view.</p>
+      </div>
+      <div class="card">
+        <span class="project-card__tag">Internal Project</span>
+        <h4>Ceedek Digital Platform</h4>
+        <p>This platform itself — a live example of our Django-based development approach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section section--dark cta-band">
+  <div class="container">
+    <h2>Have a project in mind?</h2>
+    <p>Tell us what you're trying to build or fix, and we'll get back to you with next steps.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+      <a href="{% url 'website:contact' %}" class="btn btn--outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

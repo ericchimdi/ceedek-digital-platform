@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Ceedek Digital{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Ceedek Digital builds websites, automation, data analytics, custom software and AI solutions for growing businesses worldwide.{% endblock %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="{% url 'website:home' %}" class="navbar__logo">Ceedek Digital</a>
+
+      <button class="navbar__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <nav class="navbar__links">
+        <a href="{% url 'website:home' %}" class="navbar__link {% if request.resolver_match.url_name == 'home' %}navbar__link--active{% endif %}">Home</a>
+        <a href="{% url 'website:services' %}" class="navbar__link {% if request.resolver_match.url_name == 'services' %}navbar__link--active{% endif %}">Services</a>
+        <a href="{% url 'website:solutions' %}" class="navbar__link {% if request.resolver_match.url_name == 'solutions' %}navbar__link--active{% endif %}">Solutions</a>
+        <a href="{% url 'website:projects' %}" class="navbar__link {% if request.resolver_match.url_name == 'projects' %}navbar__link--active{% endif %}">Projects</a>
+        <a href="{% url 'website:about' %}" class="navbar__link {% if request.resolver_match.url_name == 'about' %}navbar__link--active{% endif %}">About</a>
+        <a href="{% url 'website:contact' %}" class="navbar__link {% if request.resolver_match.url_name == 'contact' %}navbar__link--active{% endif %}">Contact</a>
+        <a href="{% url 'website:quote' %}" class="navbar__cta">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Ceedek Digital</div>
+          <p class="footer__desc">We help small businesses, startups and growing companies use technology to build their online presence, automate their work, and understand their data.</p>
+        </div>
+
+        <div>
+          <div class="footer__heading">Company</div>
+          <ul class="footer__links">
+            <li><a href="{% url 'website:about' %}">About</a></li>
+            <li><a href="{% url 'website:projects' %}">Projects</a></li>
+            <li><a href="{% url 'website:contact' %}">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__heading">Services</div>
+          <ul class="footer__links">
+            <li><a href="{% url 'website:services' %}">Web Development</a></li>
+            <li><a href="{% url 'website:services' %}">Business Automation</a></li>
+            <li><a href="{% url 'website:services' %}">Data Analytics</a></li>
+            <li><a href="{% url 'website:services' %}">AI Solutions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__heading">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@ceedekdigital.example">hello@ceedekdigital.example</a></li>
+            <li><a href="{% url 'website:quote' %}">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; {% now "Y" %} Ceedek Digital. All rights reserved.</span>
+        <span>Placeholder contact details — to be replaced with real business information.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

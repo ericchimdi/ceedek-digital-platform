@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Get a Quote — Ceedek Digital{% endblock %}
+{% block meta_description %}Request a quote from Ceedek Digital for your web development, automation, data analytics, custom software, or AI project.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Get a Quote</span>
+    <h1>Tell us about your project</h1>
+    <p>The more detail you give us, the faster we can put together an accurate quote. We'll get back to you within 1–2 business days.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="card" style="max-width: 720px;">
+
+      {% if submitted %}
+        <div class="form-success">Thanks — your quote request has been received. We'll be in touch within 1–2 business days.</div>
+      {% endif %}
+
+      <form method="post" class="form" novalidate>
+        {% csrf_token %}
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">Name <span class="required">*</span></label>
+            {{ form.name }}
+            {% if form.name.errors %}<div class="form-error">{{ form.name.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email <span class="required">*</span></label>
+            {{ form.email }}
+            {% if form.email.errors %}<div class="form-error">{{ form.email.errors.0 }}</div>{% endif %}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.company.id_for_label }}">Company</label>
+          {{ form.company }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.service.id_for_label }}">Service Required <span class="required">*</span></label>
+          {{ form.service }}
+          {% if form.service.errors %}<div class="form-error">{{ form.service.errors.0 }}</div>{% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.project_description.id_for_label }}">Project Description <span class="required">*</span></label>
+          {{ form.project_description }}
+          {% if form.project_description.errors %}<div class="form-error">{{ form.project_description.errors.0 }}</div>{% endif %}
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="{{ form.budget.id_for_label }}">Estimated Budget</label>
+            {{ form.budget }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.timeline.id_for_label }}">Expected Timeline</label>
+            {{ form.timeline }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.additional_info.id_for_label }}">Additional Information</label>
+          {{ form.additional_info }}
+        </div>
+
+        <button type="submit" class="btn btn--primary">Submit Quote Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

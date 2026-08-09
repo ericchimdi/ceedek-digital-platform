@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About — Ceedek Digital{% endblock %}
+{% block meta_description %}Learn about Ceedek Digital — a technology studio helping small businesses and startups build custom digital solutions.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">About</span>
+    <h1>A technology studio built for businesses that don't have one of their own</h1>
+    <p>Ceedek Digital exists to give small businesses and startups access to the kind of custom technology work usually reserved for companies with in-house engineering teams.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">What We Believe</span>
+      <h2>Good software should fit the business, not the other way around</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>Understand before building</h4>
+        <p>We ask questions before writing code. A well-built solution to the wrong problem still fails the client.</p>
+      </div>
+      <div class="card">
+        <h4>Simple, working systems</h4>
+        <p>We favour clear, maintainable solutions over impressive-sounding but fragile ones.</p>
+      </div>
+      <div class="card">
+        <h4>Long-term thinking</h4>
+        <p>We design with room to grow, so today's solution doesn't become tomorrow's rebuild.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Who We Serve</span>
+      <h2>Small businesses, startups, and growing teams</h2>
+    </div>
+    <p style="max-width: 640px;">We work with businesses that are past the "just getting started" stage but don't yet have the size or budget for an internal development team — the point where manual processes and off-the-shelf tools start holding growth back.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Where We're Headed</span>
+      <h2>A growing studio, not a finished product</h2>
+    </div>
+    <p style="max-width: 640px;">Ceedek Digital is currently a growing technology business. This platform itself is a working example of the kind of systems we build — a public website, client tools, and internal administration, all developed with the same care we bring to client work.</p>
+  </div>
+</section>
+
+<section class="section section--dark cta-band">
+  <div class="container">
+    <h2>Want to work with us?</h2>
+    <p>We're taking on new projects — let's talk about what you're building.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+      <a href="{% url 'website:contact' %}" class="btn btn--outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

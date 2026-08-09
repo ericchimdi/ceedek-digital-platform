@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Services — Ceedek Digital{% endblock %}
+{% block meta_description %}Explore Ceedek Digital's services: web development, business automation, data analytics, custom software development, and AI solutions.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Services</span>
+    <h1>Technology services built around real business outcomes</h1>
+    <p>Each service below solves a specific, common problem for growing businesses — not a generic technical offering.</p>
+  </div>
+</section>
+
+<!-- Web Development -->
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Web Development</span>
+      <h2>A website that actually represents your business</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>The problem</h4>
+        <p>Many small businesses run on an outdated website, a template that doesn't fit their brand, or no website at all — costing them credibility and customers.</p>
+      </div>
+      <div class="card">
+        <h4>Use cases</h4>
+        <p>Company websites, landing pages, booking systems, online catalogues, and web applications built specifically for how you operate.</p>
+      </div>
+      <div class="card">
+        <h4>Get started</h4>
+        <p>Tell us about your business and what you need your website to do.</p>
+        <a href="{% url 'website:quote' %}" class="card__link">Request a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Automation -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Business Automation</span>
+      <h2>Less manual work, fewer repeated mistakes</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>The problem</h4>
+        <p>Repetitive manual tasks — data entry, status updates, follow-ups — consume time your team could spend on higher-value work.</p>
+      </div>
+      <div class="card">
+        <h4>Use cases</h4>
+        <p>Automated notifications, connecting existing tools together, scheduled reports, and workflow automation across your systems.</p>
+      </div>
+      <div class="card">
+        <h4>Get started</h4>
+        <p>Describe a repetitive task you'd like to remove from your team's plate.</p>
+        <a href="{% url 'website:quote' %}" class="card__link">Request a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Analytics -->
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Data Analytics</span>
+      <h2>Understand what's actually happening in your business</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>The problem</h4>
+        <p>Data spread across spreadsheets, tools, and systems makes it hard to answer simple questions about performance.</p>
+      </div>
+      <div class="card">
+        <h4>Use cases</h4>
+        <p>Sales dashboards, operational reporting, customer behaviour insights, and centralised views of scattered data sources.</p>
+      </div>
+      <div class="card">
+        <h4>Get started</h4>
+        <p>Tell us what decisions you're trying to make with better data.</p>
+        <a href="{% url 'website:quote' %}" class="card__link">Request a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Software -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Custom Software Development</span>
+      <h2>Built for your exact workflow, not a generic one</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>The problem</h4>
+        <p>Off-the-shelf software often forces your business to work around the tool, instead of the tool working around your business.</p>
+      </div>
+      <div class="card">
+        <h4>Use cases</h4>
+        <p>Internal management systems, client portals, booking and scheduling platforms, and workflow-specific applications.</p>
+      </div>
+      <div class="card">
+        <h4>Get started</h4>
+        <p>Explain the process or system that's currently held together with workarounds.</p>
+        <a href="{% url 'website:quote' %}" class="card__link">Request a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Solutions -->
+<section class="section section--secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">AI Solutions</span>
+      <h2>Practical AI, applied where it saves real time</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4>The problem</h4>
+        <p>AI is often added for its own sake rather than to solve a specific, measurable business problem.</p>
+      </div>
+      <div class="card">
+        <h4>Use cases</h4>
+        <p>Customer support automation, document processing, content assistance, and AI features embedded into existing systems.</p>
+      </div>
+      <div class="card">
+        <h4>Get started</h4>
+        <p>Tell us about a task that currently takes longer than it should.</p>
+        <a href="{% url 'website:quote' %}" class="card__link">Request a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark cta-band">
+  <div class="container">
+    <h2>Not sure which service fits?</h2>
+    <p>Send us a short description of what you're trying to solve, and we'll point you in the right direction.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:quote' %}" class="btn btn--primary">Get a Quote</a>
+      <a href="{% url 'website:contact' %}" class="btn btn--outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

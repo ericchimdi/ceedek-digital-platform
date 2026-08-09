@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact — Ceedek Digital{% endblock %}
+{% block meta_description %}Get in touch with Ceedek Digital to discuss your project or ask a question.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Contact</span>
+    <h1>Let's talk about your project</h1>
+    <p>Have a question or want to discuss something specific? Send us a message and we'll get back to you.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="card-grid" style="grid-template-columns: 1fr 1.4fr; align-items: start;">
+
+      <div class="card">
+        <h4>Contact details</h4>
+        <p style="margin-top: 1rem;"><strong>Email:</strong><br>hello@ceedekdigital.example</p>
+        <p style="margin-top: 1rem;"><strong>Response time:</strong><br>We aim to reply within 1–2 business days.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Placeholder contact details — to be replaced with real business information.</p>
+      </div>
+
+      <div class="card">
+        {% if submitted %}
+          <div class="form-success">Thanks — your message has been received. We'll get back to you soon.</div>
+        {% endif %}
+
+        <form method="post" class="form" novalidate>
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="{{ form.name.id_for_label }}">Name <span class="required">*</span></label>
+              {{ form.name }}
+              {% if form.name.errors %}<div class="form-error">{{ form.name.errors.0 }}</div>{% endif %}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.email.id_for_label }}">Email <span class="required">*</span></label>
+              {{ form.email }}
+              {% if form.email.errors %}<div class="form-error">{{ form.email.errors.0 }}</div>{% endif %}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.company.id_for_label }}">Company</label>
+            {{ form.company }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.subject.id_for_label }}">Subject <span class="required">*</span></label>
+            {{ form.subject }}
+            {% if form.subject.errors %}<div class="form-error">{{ form.subject.errors.0 }}</div>{% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">Message <span class="required">*</span></label>
+            {{ form.message }}
+            {% if form.message.errors %}<div class="form-error">{{ form.message.errors.0 }}</div>{% endif %}
+          </div>
+
+          <button type="submit" class="btn btn--primary">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
