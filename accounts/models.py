@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
+from organizations.models import Organization
+
 
 class UserManager(BaseUserManager):
     """
@@ -47,6 +49,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=30, blank=True)
     country = models.CharField(max_length=100, blank=True)
     role = models.CharField(max_length=10, choices=Role.choices, default=Role.CLIENT)
+    organization = models.ForeignKey(
+        Organization,
+        on_delete=models.PROTECT,
+        related_name='users',
+        null=True,
+        blank=True,
+        help_text='The client organization this user belongs to. Not required for STAFF users.',
+    )
+    
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
