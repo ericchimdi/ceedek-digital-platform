@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Quote Request Received — Ceedek Digital{% endblock %}
+{% block meta_description %}Your quote request has been received by Ceedek Digital.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Quote Request Received</span>
+    <h1>Thanks — we've got your request</h1>
+    <p>Your project details have been recorded. A member of the Ceedek Digital team will review your request and follow up by email.</p>
+    <div class="btn-group">
+      <a href="{% url 'website:home' %}" class="btn btn--primary">Back to Home</a>
+      <a href="{% url 'website:services' %}" class="btn btn--outline">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

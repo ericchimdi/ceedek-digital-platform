@@ -64,8 +64,7 @@ class WebsitePagesTests(TestCase):
             'timeline': '',
             'additional_info': '',
         })
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'received')
+        self.assertRedirects(response, reverse('website:quote_success'))
 
     def test_contact_form_missing_required_field_shows_error(self):
         response = self.client.post(reverse('website:contact'), {

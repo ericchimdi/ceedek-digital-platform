@@ -11,4 +11,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('quote/', views.quote, name='quote'),
+    path('quote/thank-you/', views.quote_success, name='quote_success'),
 ]

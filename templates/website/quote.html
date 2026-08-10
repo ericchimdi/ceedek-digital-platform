@@ -22,10 +22,6 @@
   <div class="container">
     <div class="card" style="max-width: 720px;">
 
-      {% if submitted %}
-        <div class="form-success">Thanks — your quote request has been received. We'll be in touch within 1–2 business days.</div>
-      {% endif %}
-
       <form method="post" class="form" novalidate>
         {% csrf_token %}
 

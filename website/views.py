@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactForm, QuoteForm
 
 
@@ -35,12 +35,17 @@ def contact(request):
 
 
 def quote(request):
-    submitted = False
     if request.method == 'POST':
         form = QuoteForm(request.POST)
         if form.is_valid():
-            submitted = True
-            form = QuoteForm()
+            new_quote = form.save(commit=False)
+            new_quote.user = request.user if request.user.is_authenticated else None
+            new_quote.save()
+            return redirect('website:quote_success')
     else:
         form = QuoteForm()
-    return render(request, 'website/quote.html', {'form': form, 'submitted': submitted})
+    return render(request, 'website/quote.html', {'form': form})
+
+
+def quote_success(request):
+    return render(request, 'website/quote_success.html')
