@@ -346,3 +346,23 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Nav logout form (renders like a nav link) ===== */
+.navbar__logout-form {
+  display: inline;
+}
+
+.navbar__logout-btn {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 0.25rem 0;
+  cursor: pointer;
+}
+
+.navbar__logout-btn:hover {
+  color: var(--accent);
+}

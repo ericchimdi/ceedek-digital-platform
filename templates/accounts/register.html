@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Account — Ceedek Digital{% endblock %}
+{% block meta_description %}Create a Ceedek Digital client account.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero__inner">
+    <span class="eyebrow">Create Account</span>
+    <h1>Set up your Ceedek Digital account</h1>
+    <p>Create an account to keep track of your enquiries and, in future, your projects with us.</p>
+  </div>
+</section>
+
+<section class="section section--secondary">
+  <div class="container">
+    <div class="card" style="max-width: 560px;">
+
+      {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+          <div class="form-error" style="margin-bottom: 1rem;">{{ error }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <form method="post" class="form" novalidate>
+        {% csrf_token %}
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="{{ form.first_name.id_for_label }}">First name <span class="required">*</span></label>
+            {{ form.first_name }}
+            {% if form.first_name.errors %}<div class="form-error">{{ form.first_name.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.last_name.id_for_label }}">Last name <span class="required">*</span></label>
+            {{ form.last_name }}
+            {% if form.last_name.errors %}<div class="form-error">{{ form.last_name.errors.0 }}</div>{% endif %}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">Email <span class="required">*</span></label>
+          {{ form.email }}
+          {% if form.email.errors %}<div class="form-error">{{ form.email.errors.0 }}</div>{% endif %}
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="{{ form.phone.id_for_label }}">Phone</label>
+            {{ form.phone }}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.country.id_for_label }}">Country</label>
+            {{ form.country }}
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}">Password <span class="required">*</span></label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}<div class="form-error">{{ form.password1.errors.0 }}</div>{% endif %}
+          </div>
+          <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}">Confirm password <span class="required">*</span></label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}<div class="form-error">{{ form.password2.errors.0 }}</div>{% endif %}
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Create Account</button>
+      </form>
+
+      <p style="margin-top: 1.5rem; font-size: 0.9rem;">Already have an account? <a href="{% url 'accounts:login' %}" style="color: var(--accent); font-weight: 600;">Log in</a></p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
